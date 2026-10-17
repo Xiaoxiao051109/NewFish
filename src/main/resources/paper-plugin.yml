@@ -1,0 +1,85 @@
+# Paper 现代插件描述符。
+#
+# ⚠️ 为什么必须同时存在 paper-plugin.yml 和 plugin.yml：
+#
+# Paper 只有在解析到 **paper-plugin.yml** 时，才会把插件当作「Paper 插件」加载，
+# 也只有这条路径会去读取 `bootstrapper` 字段并执行 PluginBootstrap。
+# 若只有 plugin.yml，插件会被归类为传统 Bukkit 插件，`bootstrapper` 被完全忽略 ——
+# 表现为附魔注册静默失败、/newfish enchant 提示成功但物品毫无变化。
+# （服务端启动日志里的 "Paper plugins" / "Bukkit plugins" 两个分组就是这个机制。）
+#
+# 两个文件可以共存，且各有分工：
+#   · paper-plugin.yml —— 负责主类、bootstrapper 与现代格式的依赖声明；
+#   · plugin.yml       —— 继续提供 commands / permissions（CraftBukkit 的命令加载
+#                         仍从 plugin.yml 读取，Paper 插件不使用本文件的 commands 字段）。
+name: NewFish
+version: '${version}'
+main: org.example.xiaoxiao.newFish.NewFish
+bootstrapper: org.example.xiaoxiao.newFish.NewFishBootstrap
+api-version: '1.21'
+description: 钓鱼扩展玩法：自定义鱼类、钓鱼图鉴、鱼获品级与原版附魔。
+authors: [NewFish]
+
+# ⚠️ Folia 支持开关必须在**本文件**声明。
+# Paper 插件模式下 plugin.yml 不参与元数据解析，PaperPluginProviderFactory
+# 只读 paper-plugin.yml；漏掉这一行会直接拒绝加载：
+#   "Could not load plugin 'NewFish' as it is not marked as supporting Folia!"
+folia-supported: true
+
+# Paper 插件的依赖用 bootstrap / server 两段声明，不再使用 depend / softdepend。
+#
+# 这里**刻意不给 bootstrap 段声明任何依赖**：
+#   · 引导期只用 Paper 自带的注册表 API（RegistryEvents.ENCHANTMENT），
+#     不需要 CraftEngine 或 PlaceholderAPI 的任何类；
+#   · PlaceholderAPI / CraftEngine 都是传统 Bukkit 插件，引导期尚未就绪，
+#     若在 bootstrap 里声明 required 反而会让加载失败。
+#
+# join-classpath 按依赖分别设置（详见下方逐条注释）：
+#   · PlaceholderAPI 必须为 true —— NewFishExpansion 继承它的 PlaceholderExpansion，
+#     继承关系在类加载期就要解析父类；
+#   · CraftEngine 保持 false —— 本插件只做反射访问，不继承它的任何类。
+#
+# ⚠️⚠️ PlaceholderAPI 的 required 必须是 false，**不能写 true**。
+#
+# Paper 的加载流程是 LaunchEntryPointHandler.enterBootstrappers →
+# SimpleProviderStorage.enter → ModernPluginLoadingStrategy.loadProviders，
+# 也就是**在引导期、连 bootstrapper 类都还没加载时，就先校验这份依赖表**。
+# 而 PlaceholderAPI 是传统 Bukkit 插件，此刻根本没进 provider 存储，
+# 于是 required: true 必然抛：
+#
+#   UnknownDependencyException: Unknown/missing dependency plugins: [PlaceholderAPI]
+#     at ModernPluginLoadingStrategy.loadProviders(ModernPluginLoadingStrategy.java:82)
+#     at LaunchEntryPointHandler.enterBootstrappers(LaunchEntryPointHandler.java:29)
+#
+# 同时注意：Paper 插件的加载顺序逻辑已与 plugin.yml 拆开，plugin.yml 的
+# depend/softdepend 在 Paper 插件模式下**不参与加载期校验**，所以硬约束不能
+# 指望 plugin.yml 兜底，必须由插件自己在 onEnable 里检查（见 NewFish#onEnable：
+# 检测不到 PlaceholderAPI 会打 warning 并显式禁用自身）。
+#
+# load: BEFORE 保留 —— 它是「顺序提示」而非「强制校验」，可以让 PAPI 尽量先就绪。
+#
+# ⚠️⚠️ PlaceholderAPI 的 join-classpath 必须是 **true**，不能写 false。
+#
+# Paper 插件默认启用 classloading isolation：插件之间互相看不见对方的 classpath，
+# 除非在依赖里显式打开。NewFishExpansion extends PlaceholderExpansion，而
+# **继承关系是在类加载期就必须解析父类的** —— 一旦 join-classpath: false，
+# 加载 NewFishExpansion 时会抛：
+#
+#   java.lang.NoClassDefFoundError: me/clip/placeholderapi/expansion/PlaceholderExpansion
+#     Caused by: java.lang.ClassNotFoundException: me.clip.placeholderapi.expansion.PlaceholderExpansion
+#       at NewFish.onEnable(...)   // new NewFishExpansion(this).register()
+#
+# 注意这与「反射调用所以不需要对方 classpath」是两回事：
+# 反射可以延迟到运行期，但 **extends 是编译期就绑定的**，运行期必须能解析到父类。
+dependencies:
+  server:
+    PlaceholderAPI:
+      load: BEFORE
+      required: false   # ⚠️ 改回 true 会在引导期直接拒绝加载，见上方说明
+      join-classpath: true   # ⚠️ 改回 false 会 NoClassDefFoundError，见上方说明
+    CraftEngine:
+      load: BEFORE
+      required: false
+      # CraftEngine 全程只用反射访问（CraftEngineBridge），不继承它的类，
+      # 因此保持 false，避免把它的 classpath 并进来徒增冲突风险。
+      join-classpath: false

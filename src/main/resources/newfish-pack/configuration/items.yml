@@ -1,0 +1,437 @@
+items:
+  newfish:anchovy:
+    material: paper
+    model: newfish:item/anchovy
+    data:
+      item_name: '<!i>鳀鱼'
+      lore:
+        - '<!i><gray>离我的披萨远一点！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:angelfish:
+    material: paper
+    model: newfish:item/angelfish
+    data:
+      item_name: '<!i>神仙鱼'
+      lore:
+        - '<!i><gray>看着就透着一股仙气！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:arapaima:
+    material: paper
+    model: newfish:item/arapaima
+    data:
+      item_name: '<!i>巨骨舌鱼'
+      lore:
+        - '<!i><gray>哇！这家伙也太大了吧！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:arowana:
+    material: paper
+    model: newfish:item/arowana
+    data:
+      item_name: '<!i>龙鱼'
+      lore:
+        - '<!i><gray>这可是正儿八经的金龙鱼！'
+        - '<!i><gray>不知道能值多少钱……'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:barbel_steed:
+    material: paper
+    model: newfish:item/barbel_steed
+    data:
+      item_name: '<!i>花䱻'
+      lore:
+        - '<!i><gray>有点好笑……'
+        - '<!i><gray>它看起来更像鱼，而不是骏马。'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:barred_knifejaw:
+    material: paper
+    model: newfish:item/barred_knifejaw
+    data:
+      item_name: '<!i>条石鲷'
+      lore:
+        - '<!i><gray>长着那样一副利牙，难怪要被“封禁”！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:bass:
+    material: paper
+    model: newfish:item/bass
+    data:
+      item_name: '<!i>鲈鱼'
+      lore:
+        - '<!i><gray>要是再钓到一条鼓手鱼，'
+        - '<!i><gray>说不定我就能组个乐队了！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:bitterling:
+    material: paper
+    model: newfish:item/bitterling
+    data:
+      item_name: '<!i>鳑鲏'
+      lore:
+        - '<!i><gray>它到底在苦些什么呀？'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:bluegill:
+    material: paper
+    model: newfish:item/bluegill
+    data:
+      item_name: '<!i>蓝鳃太阳鱼'
+      lore:
+        - '<!i><gray>这小家伙怎么这么忧郁？'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:brook_trout:
+    material: paper
+    model: newfish:item/brook_trout
+    data:
+      item_name: '<!i>溪红点鲑'
+      lore:
+        - '<!i><gray>看来它今天真是“鲑”到家了！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:carp:
+    material: paper
+    model: newfish:item/carp
+    data:
+      item_name: '<!i>鲤鱼'
+      lore:
+        - '<!i><gray>我可真是把“及时行乐”给钓上来了！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:catfish:
+    material: paper
+    model: newfish:item/catfish
+    data:
+      item_name: '<!i>鲶鱼'
+      lore:
+        - '<!i><gray>我想叫它“胡子”……'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:cherry_salmon:
+    material: paper
+    model: newfish:item/cherry_salmon
+    data:
+      item_name: '<!i>樱鳟'
+      lore:
+        - '<!i><gray>奇怪……闻起来有股鱼味'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:coelacanth:
+    material: paper
+    model: newfish:item/coelacanth
+    data:
+      item_name: '<!i>腔棘鱼'
+      lore:
+        - '<!i><gray>我钓到了一条活化石！'
+        - '<!i><gray>原来它们真的还存在！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:crawfish:
+    material: paper
+    model: newfish:item/crawfish
+    data:
+      item_name: '<!i>小龙虾'
+      lore:
+        - '<!i><gray>小心它那对大钳子！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:crucian_carp:
+    material: paper
+    model: newfish:item/crucian_carp
+    data:
+      item_name: '<!i>鲫鱼'
+      lore:
+        - '<!i><gray>及时行乐，抓紧当下！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:dab:
+    material: paper
+    model: newfish:item/dab
+    data:
+      item_name: '<!i>鲽鱼'
+      lore:
+        - '<!i><gray>你是“鲽”中高手，对吧？'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:dace:
+    material: paper
+    model: newfish:item/dace
+    data:
+      item_name: '<!i>鲦鱼'
+      lore:
+        - '<!i><gray>鲦鱼在手，胜券在握！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:eel:
+    material: paper
+    model: newfish:item/eel
+    data:
+      item_name: '<!i>鳗鱼'
+      lore:
+        - '<!i><gray>滑不溜秋的小家伙！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:freshwater_goby:
+    material: paper
+    model: newfish:item/freshwater_goby
+    data:
+      item_name: '<!i>淡水虾虎鱼'
+      lore:
+        - '<!i><gray>现在，乖乖进我口袋吧！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:frog:
+    material: paper
+    model: newfish:item/frog
+    data:
+      item_name: '<!i>青蛙'
+      lore:
+        - '<!i><gray>跳起来吧，小青蛙！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:giant_catfish:
+    material: paper
+    model: newfish:item/giant_catfish
+    data:
+      item_name: '<!i>巨型鲶鱼'
+      lore:
+        - '<!i><gray>原来地震就是你搞的鬼？'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:giant_snakehead:
+    material: paper
+    model: newfish:item/giant_snakehead
+    data:
+      item_name: '<!i>巨型黑鱼'
+      lore:
+        - '<!i><gray>呜啊！它脑袋也太大了吧！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:goldfish:
+    material: paper
+    model: newfish:item/goldfish
+    data:
+      item_name: '<!i>金鱼'
+      lore:
+        - '<!i><gray>也就值它本身的……鱼价。好吧。'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:guppy:
+    material: paper
+    model: newfish:item/guppy
+    data:
+      item_name: '<!i>孔雀鱼'
+      lore:
+        - '<!i><gray>个头虽小，咬起钩来可真猛！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:horse_mackerel:
+    material: paper
+    model: newfish:item/horse_mackerel
+    data:
+      item_name: '<!i>竹荚鱼'
+      lore:
+        - '<!i><gray>我的个老天爷呀！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:jellyfish:
+    material: paper
+    model: newfish:item/jellyfish
+    data:
+      item_name: '<!i>水母'
+      lore:
+        - '<!i><gray>不知道它抹在吐司上……'
+        - '<!i><gray>会是什么味道……'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:killifish:
+    material: paper
+    model: newfish:item/killifish
+    data:
+      item_name: '<!i>鳉鱼'
+      lore:
+        - '<!i><gray>溪流又恢复太平了。'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:koi:
+    material: paper
+    model: newfish:item/koi
+    data:
+      item_name: '<!i>锦鲤'
+      lore:
+        - '<!i><gray>想跟我玩“锦鲤”这套？没门！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:large_bass:
+    material: paper
+    model: newfish:item/large_bass
+    data:
+      item_name: '<!i>大鲈鱼'
+      lore:
+        - '<!i><gray>嗯，是挺大的……大概吧……'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:large_char:
+    material: paper
+    model: newfish:item/large_char
+    data:
+      item_name: '<!i>日本红点鲑'
+      lore:
+        - '<!i><gray>不知道它烤起来……'
+        - '<!i><gray>会不会有股“炭烤”的香气……'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:loach:
+    material: paper
+    model: newfish:item/loach
+    data:
+      item_name: '<!i>泥鳅'
+      lore:
+        - '<!i><gray>你说它该不会是海拉鲁来的吧？'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:lobster:
+    material: paper
+    model: newfish:item/lobster
+    data:
+      item_name: '<!i>龙虾'
+      lore:
+        - '<!i><gray>海里的“虾”界大佬。'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:marlin:
+    material: paper
+    model: newfish:item/marlin
+    data:
+      item_name: '<!i>蓝枪鱼'
+      lore:
+        - '<!i><gray>枪鱼啊，你怎么这么忧郁？'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:octopus:
+    material: paper
+    model: newfish:item/octopus
+    data:
+      item_name: '<!i>章鱼'
+      lore:
+        - '<!i><gray>吸盘怪，你归我了！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:olive_flounder:
+    material: paper
+    model: newfish:item/olive_flounder
+    data:
+      item_name: '<!i>牙鲆'
+      lore:
+        - '<!i><gray>嘿，扁扁的小家伙！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:pale_chub:
+    material: paper
+    model: newfish:item/pale_chub
+    data:
+      item_name: '<!i>白鲦'
+      lore:
+        - '<!i><gray>它是该晒晒太阳了。'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:piranha:
+    material: paper
+    model: newfish:item/piranha
+    data:
+      item_name: '<!i>食人鱼'
+      lore:
+        - '<!i><gray>咬钩，别咬我！！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:pond_smelt:
+    material: paper
+    model: newfish:item/pond_smelt
+    data:
+      item_name: '<!i>池沼公鱼'
+      lore:
+        - '<!i><gray>池塘到底闻起来是什么味儿？'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:popeyed_goldfish:
+    material: paper
+    model: newfish:item/popeyed_goldfish
+    data:
+      item_name: '<!i>龙睛金鱼'
+      lore:
+        - '<!i><gray>它看起来好……惊讶！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:rainbow_trout:
+    material: paper
+    model: newfish:item/rainbow_trout
+    data:
+      item_name: '<!i>虹鳟'
+      lore:
+        - '<!i><gray>一条五颜六色的鳟鱼！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:red_snapper:
+    material: paper
+    model: newfish:item/red_snapper
+    data:
+      item_name: '<!i>红笛鲷'
+      lore:
+        - '<!i><gray>我一下就把它抢到手了！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:sea_bass:
+    material: paper
+    model: newfish:item/sea_bass
+    data:
+      item_name: '<!i>海鲈鱼'
+      lore:
+        - '<!i><gray>怎么又是它！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:seahorse:
+    material: paper
+    model: newfish:item/seahorse
+    data:
+      item_name: '<!i>海马'
+      lore:
+        - '<!i><gray>驾！呦吼——！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:small_bass:
+    material: paper
+    model: newfish:item/small_bass
+    data:
+      item_name: '<!i>小鲈鱼'
+      lore:
+        - '<!i><gray>就是条小不点！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:squid:
+    material: paper
+    model: newfish:item/squid
+    data:
+      item_name: '<!i>鱿鱼'
+      lore:
+        - '<!i><gray>哎呀，我可“鱿”点后悔了！'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:stringfish:
+    material: paper
+    model: newfish:item/stringfish
+    data:
+      item_name: '<!i>远东哲罗鱼'
+      lore:
+        - '<!i><gray>我可一直是在“放长线”来着……'
+      food: { nutrition: 3, saturation: 1.8 }
+      consumable: { consume_seconds: 1.6, animation: eat }
+  newfish:sweetfish:
+    material: paper
+    model: newfish:item/sweetfish
+    data:
+      item_name: '<!i>香鱼'
+      lore:
+        - '<!i><gray>希望不是加了糖精的甜！'

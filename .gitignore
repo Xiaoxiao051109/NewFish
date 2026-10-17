@@ -1,0 +1,31 @@
+# 构建产物
+build/
+out/
+.gradle/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 运行期日志与崩溃报告
+*.log
+logs/
+crash-reports/
+
+# 上游参考材料（体积大且非构建所需；许可溯源说明见 THIRD_PARTY_NOTICES.md）
+third-party/upstream/
+
+# 项目记忆
+.workbuddy/
+
+# 临时文件
+*.tmp
+.cache/

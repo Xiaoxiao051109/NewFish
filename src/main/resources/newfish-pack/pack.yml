@@ -1,0 +1,5 @@
+namespace: newfish
+author: NewFish
+version: 2.0
+description: NewFish ExlineFishing fish assets and non-BOSS fishing items
+enable: true

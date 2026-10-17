@@ -1,0 +1,33 @@
+# ⚠️ 本文件**不能**声明 bootstrapper —— Paper 只在 paper-plugin.yml 里解析该字段。
+# 附魔的引导期注册由 paper-plugin.yml 指向 NewFishBootstrap 完成。
+#
+# 去掉了 load: POSTWORLD —— Paper 插件模式不识别该字段，Paper 插件的加载时机
+# 本身就晚于世界初始化，语义等价，留着反而可能触发元数据校验失败。
+#
+# ⚠️ 本文件**也不声明 commands 段**。
+#
+# Paper 插件（即存在 paper-plugin.yml 时）完全使用 Brigadier 注册命令，
+# 既不读本文件的 commands 段，且 JavaPlugin#getCommand 在启用阶段会直接抛：
+#   UnsupportedOperationException: ... Paper plugins do not support
+#   YAML-based command declarations!
+# /newfish 因此改由 NewFish#onEnable 里的 registerCommand(...) 注册。
+#
+# 这里刻意不留 commands 段：若留着，其中 `tab-completer:` 指向的类必须实现
+# org.bukkit.command.TabCompleter，而 NewFish 现在实现的是 BasicCommand，
+# 一旦插件被当作传统 Bukkit 插件加载就会 ClassCastException 崩溃。
+# 宁可让它「没有命令」也不要留一个会在降级路径上炸的配置。
+name: NewFish
+version: '${version}'
+main: org.example.xiaoxiao.newFish.NewFish
+api-version: '1.21'
+folia-supported: true
+# ⚠️ 下面两行在「Paper 插件模式」下**不参与加载期校验**（Paper 已把加载顺序逻辑
+# 从 plugin.yml 拆到 paper-plugin.yml 的 dependencies 段）。真正的硬约束由
+# paper-plugin.yml + NewFish#onEnable 的自检承担。保留它们是为了万一被当作
+# 传统 Bukkit 插件加载时仍有正确语义。
+softdepend: [CraftEngine]
+depend: [PlaceholderAPI]
+permissions:
+  newfish.admin:
+    description: 管理 NewFish 插件
+    default: op

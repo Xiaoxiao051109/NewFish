@@ -1,0 +1,10 @@
+第三方资源声明：Exline’s Fishing Mod
+
+来源文件：exlinefishing-fabric-1.20.1-v1.0.4.jar
+迁移内容：鱼类 PNG 贴图、item/generated 模型 JSON、英文名称与 tooltip
+目标：NewFish 的 CraftEngine 资源包（newfish 命名空间）
+
+许可证说明：
+fabric.mod.json 声明 license 为 MIT，但源 JAR 内附带的 LICENSE_exlinefishing 正文是 Creative Commons CC0 1.0 Universal。两者存在不一致；本项目原样保留源 JAR 的许可证文件，不对上游许可证作额外解释或保证。正式再分发前请以 ExlineFishing 上游项目的最新许可证声明为准。
+
+本项目没有加载或再分发 Fabric 模组的 Java 类、Mixin、fabric.mod.json 或 Fabric 运行时逻辑。

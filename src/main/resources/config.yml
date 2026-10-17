@@ -1,0 +1,297 @@
+config-version: 5
+# NewFish 默认配置。所有权重均为相对权重；0 表示禁用对应结果。
+fishing:
+  enabled: true
+  # 排查开关。设为 true 后，每次钓鱼事件都会在控制台打印
+  # state / getCaught() 实际类型 / 抽中的条目 / CraftEngine 是否可用。
+  # 只在排查问题时临时打开，平时关闭以免刷屏。
+  debug: false
+  # 默认仿照原版开放水域的鱼/垃圾/宝藏比例；Luck of the Sea 会按等级调整分类。
+  category-weights:
+    fish: 85
+    junk: 10
+    treasure: 5
+  worlds: [] # 留空表示所有世界；否则填写世界名白名单。
+  loot:
+    fish:
+      # ExlineFishing 自定义鱼必须作为物品加入 fish 池，不能使用 mob 类型。
+      - { type: custom_fish, id: anchovy, weight: 50 }
+      - { type: custom_fish, id: angelfish, weight: 50 }
+      - { type: custom_fish, id: arapaima, weight: 10 }
+      - { type: custom_fish, id: arowana, weight: 10 }
+      - { type: custom_fish, id: barbel_steed, weight: 35 }
+      - { type: custom_fish, id: barred_knifejaw, weight: 10 }
+      - { type: custom_fish, id: bass, weight: 35 }
+      - { type: custom_fish, id: bitterling, weight: 20 }
+      - { type: custom_fish, id: bluegill, weight: 50 }
+      - { type: custom_fish, id: brook_trout, weight: 35 }
+      - { type: custom_fish, id: carp, weight: 35 }
+      - { type: custom_fish, id: catfish, weight: 35 }
+      - { type: custom_fish, id: cherry_salmon, weight: 20 }
+      - { type: custom_fish, id: coelacanth, weight: 5 }
+      - { type: custom_fish, id: crawfish, weight: 50 }
+      - { type: custom_fish, id: crucian_carp, weight: 50 }
+      - { type: custom_fish, id: dab, weight: 35 }
+      - { type: custom_fish, id: dace, weight: 50 }
+      - { type: custom_fish, id: eel, weight: 20 }
+      - { type: custom_fish, id: freshwater_goby, weight: 35 }
+      - { type: custom_fish, id: frog, weight: 50 }
+      - { type: custom_fish, id: giant_catfish, weight: 10 }
+      - { type: custom_fish, id: giant_snakehead, weight: 10 }
+      - { type: custom_fish, id: goldfish, weight: 20 }
+      - { type: custom_fish, id: guppy, weight: 20 }
+      - { type: custom_fish, id: horse_mackerel, weight: 50 }
+      - { type: custom_fish, id: jellyfish, weight: 50 }
+      - { type: custom_fish, id: killifish, weight: 35 }
+      - { type: custom_fish, id: koi, weight: 20 }
+      - { type: custom_fish, id: large_bass, weight: 20 }
+      - { type: custom_fish, id: large_char, weight: 10 }
+      - { type: custom_fish, id: lobster, weight: 20 }
+      - { type: custom_fish, id: loach, weight: 35 }
+      - { type: custom_fish, id: marlin, weight: 5 }
+      - { type: custom_fish, id: octopus, weight: 35 }
+      - { type: custom_fish, id: olive_flounder, weight: 35 }
+      - { type: custom_fish, id: pale_chub, weight: 35 }
+      - { type: custom_fish, id: piranha, weight: 10 }
+      - { type: custom_fish, id: pond_smelt, weight: 35 }
+      - { type: custom_fish, id: popeyed_goldfish, weight: 20 }
+      - { type: custom_fish, id: rainbow_trout, weight: 35 }
+      - { type: custom_fish, id: red_snapper, weight: 10 }
+      - { type: custom_fish, id: sea_bass, weight: 50 }
+      - { type: custom_fish, id: seahorse, weight: 20 }
+      - { type: custom_fish, id: small_bass, weight: 35 }
+      - { type: custom_fish, id: squid, weight: 20 }
+      - { type: custom_fish, id: stringfish, weight: 20 }
+      - { type: custom_fish, id: sweetfish, weight: 20 }
+      - { type: item, id: cod, weight: 30 }
+      - { type: item, id: salmon, weight: 30 }
+      - { type: item, id: tropical_fish, weight: 2 }
+      - { type: item, id: pufferfish, weight: 12 }
+      - { type: mob, id: trident, weight: 1 }
+      - { type: mob, id: drowned, weight: 6 }
+      - { type: mob, id: guardian, weight: 1 }
+      - { type: mob, id: drowned_guardian, weight: 1 }
+      - { type: mob, id: salmon, weight: 60 }
+      - { type: mob, id: cod, weight: 60 }
+      - { type: mob, id: tropical_fish, weight: 2 }
+      - { type: mob, id: pufferfish, weight: 12 }
+      - { type: mob, id: squid, weight: 6 }
+      - { type: mob, id: turtle, weight: 6 }
+      - { type: mob, id: glow_squid, weight: 2 }
+      - { type: mob, id: axolotl, weight: 2 }
+      - { type: mob, id: dolphin, weight: 2 }
+    junk:
+      - { type: item, id: lily_pad, weight: 17 }
+      - { type: item, id: leather_boots, weight: 10 }
+      - { type: item, id: leather, weight: 10 }
+      - { type: item, id: bone, weight: 10 }
+      - { type: item, id: potion, weight: 10 }
+      - { type: item, id: string, weight: 5 }
+      - { type: item, id: fishing_rod, weight: 2 }
+      - { type: item, id: bowl, weight: 10 }
+      - { type: item, id: stick, weight: 5 }
+      - { type: item, id: ink_sac, weight: 1, amount: 10 }
+      - { type: item, id: tripwire_hook, weight: 10 }
+      - { type: item, id: rotten_flesh, weight: 10 }
+      - { type: item, id: bamboo, weight: 10, biomes: [JUNGLE, SPARSE_JUNGLE, BAMBOO_JUNGLE] }
+    treasure:
+      - { type: map, id: shipwreck, weight: 20 }
+      - { type: map, id: buried_treasure, weight: 10 }
+      - { type: map, id: monument, weight: 5 }
+      - { type: map, id: ocean_ruin, weight: 10 }
+      - { type: map, id: ruined_portal, weight: 10 }
+      - { type: item, id: name_tag, weight: 30 }
+      - { type: item, id: nautilus_shell, weight: 30 }
+      - { type: item, id: heart_of_the_sea, weight: 5 }
+      - { type: item, id: ender_pearl, weight: 10 }
+      - { type: item, id: turtle_egg, weight: 10 }
+      - { type: item, id: scute, weight: 20 }
+      - { type: enchanted, id: book, weight: 20 }
+      - { type: enchanted, id: fishing_rod, weight: 20 }
+      - { type: enchanted, id: bow, weight: 1 }
+      - { type: enchanted, id: random_bow, weight: 20 }
+      - { type: enchanted, id: random_fishing_rod, weight: 20 }
+      - { type: enchanted, id: random_book, weight: 20 }
+
+  # 鱼获重量与品级。
+  # 每次钓到自定义鱼都会掷一个重量：以 base-kilograms 为基准上下浮动，
+  # 离基准越远品级越高。重量会写入物品 PDC，并计入图鉴/个人最佳/全服纪录。
+  weight:
+    enabled: true
+    # 未在 base-kilograms 里单独配置的鱼使用的基准重量（千克）。
+    default-base-kilograms: 1.0
+    # 浮动幅度：实际重量在 base × (1 ± variance) 之间均匀取值。0.35 即 ±35%。
+    variance: 0.35
+    # 达到 base × 该倍率即为传说档。必须大于 1 + variance / 2，否则传说档永远取不到。
+    legendary-factor: 1.6
+    # 钓到传说档时是否向全服播报。
+    broadcast-legendary: true
+    # 各鱼种的基准重量，按需覆盖 default-base-kilograms。
+    base-kilograms:
+      anchovy: 0.3
+      angelfish: 0.8
+      arapaima: 12.0
+      arowana: 4.0
+      barbel_steed: 2.0
+      barred_knifejaw: 3.5
+      bass: 2.0
+      bitterling: 0.1
+      bluegill: 0.5
+      brook_trout: 0.6
+      carp: 3.0
+      catfish: 6.0
+      cherry_salmon: 1.2
+      coelacanth: 20.0
+      crawfish: 0.2
+      crucian_carp: 1.0
+      dab: 0.8
+      dace: 0.4
+      eel: 1.5
+      freshwater_goby: 0.3
+      frog: 0.2
+      giant_catfish: 25.0
+      giant_snakehead: 15.0
+      goldfish: 0.3
+      guppy: 0.1
+      horse_mackerel: 1.0
+      jellyfish: 1.5
+      killifish: 0.2
+      koi: 3.0
+      large_bass: 4.0
+      large_char: 5.0
+      lobster: 2.0
+      loach: 0.3
+      marlin: 40.0
+      octopus: 5.0
+      olive_flounder: 1.5
+      pale_chub: 0.8
+      piranha: 1.2
+      pond_smelt: 0.2
+      popeyed_goldfish: 0.3
+      rainbow_trout: 1.5
+      red_snapper: 2.5
+      sea_bass: 3.0
+      seahorse: 0.4
+      small_bass: 1.2
+      squid: 1.0
+      stringfish: 8.0
+      sweetfish: 0.6
+    # 三档品级的显示名与颜色。
+    grades:
+      common:
+        name: 普通
+        color: GRAY
+      rare:
+        name: 稀有
+        color: AQUA
+      legendary:
+        name: 传说
+        color: GOLD
+
+codex:
+  # 图鉴是否启用。关闭后 /newfish codex 会提示未启用，且不再记录收集进度。
+  enabled: true
+  # 首次钓到某个鱼种时是否给玩家发一条进度提示。
+  announce-first-catch: true
+  # 未收录鱼种在列表里显示的名称。
+  unknown-name: '???'
+  # %newfish_top% 与纪录榜最多显示多少条。
+  top-limit: 5
+
+craftengine:
+  enabled: true
+  # 这些 ID 与随插件提供的 CraftEngine 资源包资产一致。
+  items:
+    anchovy: newfish:anchovy
+    angelfish: newfish:angelfish
+    arapaima: newfish:arapaima
+    arowana: newfish:arowana
+    barbel_steed: newfish:barbel_steed
+    barred_knifejaw: newfish:barred_knifejaw
+    bass: newfish:bass
+    bitterling: newfish:bitterling
+    bluegill: newfish:bluegill
+    brook_trout: newfish:brook_trout
+    carp: newfish:carp
+    catfish: newfish:catfish
+    cherry_salmon: newfish:cherry_salmon
+    coelacanth: newfish:coelacanth
+    crawfish: newfish:crawfish
+    crucian_carp: newfish:crucian_carp
+    dab: newfish:dab
+    dace: newfish:dace
+    eel: newfish:eel
+    freshwater_goby: newfish:freshwater_goby
+    frog: newfish:frog
+    giant_catfish: newfish:giant_catfish
+    giant_snakehead: newfish:giant_snakehead
+    goldfish: newfish:goldfish
+    guppy: newfish:guppy
+    horse_mackerel: newfish:horse_mackerel
+    jellyfish: newfish:jellyfish
+    killifish: newfish:killifish
+    koi: newfish:koi
+    large_bass: newfish:large_bass
+    large_char: newfish:large_char
+    loach: newfish:loach
+    lobster: newfish:lobster
+    marlin: newfish:marlin
+    octopus: newfish:octopus
+    olive_flounder: newfish:olive_flounder
+    pale_chub: newfish:pale_chub
+    piranha: newfish:piranha
+    pond_smelt: newfish:pond_smelt
+    popeyed_goldfish: newfish:popeyed_goldfish
+    rainbow_trout: newfish:rainbow_trout
+    red_snapper: newfish:red_snapper
+    sea_bass: newfish:sea_bass
+    seahorse: newfish:seahorse
+    small_bass: newfish:small_bass
+    squid: newfish:squid
+    stringfish: newfish:stringfish
+    sweetfish: newfish:sweetfish
+
+
+enchantments:
+  enabled: true
+  # NewFish 附魔已在引导期由 NewFishBootstrap 注册为**真正的原版附魔**，
+  # 但被刻意配置成「只能通过钓鱼获得」：
+  #   · 附魔台权重压到原版最低值 1；
+  #   · 成本区间下界抬到 60，远超 30 级附魔台能达到的成本上限。
+  # 因此附魔台与图书管理员村民都抽不到它们，唯一正常来源是下面的 natural-loot。
+  # 铁砧合并、/enchant 手动给予不走这套筛选，仍可正常使用（供管理员调试）。
+  #
+  # 下面这些开关只控制「对应的功能监听器」是否生效。
+  sea_lure: true
+  treasure_hunter: true
+  hooked_strike: true
+  ender_hook: true
+  water_trail: true
+  dolphins_grace: true
+  thundering: true
+  water-trail:
+    max-active-arrows: 64
+    max-blocks-per-arrow: 24
+    max-distance: 48
+    lifetime-ticks: 20
+  # 钓鱼产出附魔物品的概率与去向 —— 这是 NewFish 附魔的**唯一正常获取途径**。
+  # 每次从钓鱼宝藏池抽到 enchanted 条目时，按下面的池子随机附加一个 NewFish 附魔。
+  natural-loot:
+    enabled: true
+    # 抽到附魔物品后，成功附上附魔的概率（0~1）。1.0 表示必附。
+    chance: 0.35
+    # 各目标类型可随机到的附魔（按 ID）。
+    pool:
+      # 鱼竿：海之诱饵 / 宝藏猎人 / 鱼钩猛击 / 末影鱼钩
+      rod: [sea_lure, treasure_hunter, hooked_strike, ender_hook]
+      # 弓：水痕
+      bow: [water_trail]
+      # 附魔书：全部七种都会出现，因此书本是最全的获取途径。
+      book: [sea_lure, treasure_hunter, hooked_strike, ender_hook, water_trail, dolphins_grace, thundering]
+    # 各附魔出现时的等级：给一个区间，随机取整数（含两端）。
+    levels:
+      default: [1, 1]
+      sea_lure: [1, 3]
+      treasure_hunter: [1, 3]
+      hooked_strike: [1, 3]
+      water_trail: [1, 3]
